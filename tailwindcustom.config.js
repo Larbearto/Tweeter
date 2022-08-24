@@ -42,10 +42,7 @@ module.exports = {
         MatteDarkRed: '#761F17',
         MatteCyan: '#0EB8BE',
         MatteAqua: '#99D1D5',
-        MatteOlive: '#998F7F',
-        EcoGreen: '#60B45A',
-        RoyalGreen: '#0C5D25',
-        MughalGreen: '#2A612B'
+        MatteOlive: '#998F7F'
       }
     },
     plugins: []

@@ -17,7 +17,7 @@ function Sidebar() {
   const { data: session } = useSession()
   return (
     <div className='hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full'>
-      <div className='flex items-center justify-center w-14 h-14 hoverAnimation p-0 xl:ml-24'>
+      <div className='flex items-center justify-center p-0 w-14 h-14 hoverAnimation xl:ml-24'>
         <Image src='https://rb.gy/ogau5a' width={30} height={30} />
       </div>
       <div className='space-y-5 mt-4 mb-2.5 xl:ml-24'>
@@ -45,11 +45,11 @@ function Sidebar() {
           objectFit='cover'
           className='rounded-full xl:mr-2.5'
         />
-        <div className='hidden xl:inline leading-5'>
+        <div className='hidden leading-5 xl:inline'>
           <h4 className='font-bold'>{session.user.name}</h4>
           <p className='text-[#6e767d]'>@{session.user.tag}</p>
         </div>
-        <DotsHorizontalIcon className='h-5 hidden xl:inline ml-10' />
+        <DotsHorizontalIcon className='hidden h-5 ml-10 xl:inline' />
       </div>
     </div>
   )
