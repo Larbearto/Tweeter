@@ -40,6 +40,26 @@ function Post({ id, post, postPage }) {
 
   useEffect(
     () =>
+      onSnapshot(
+        query(
+          collection(db, 'posts', id, 'comments'),
+          orderBy('timestamp', 'desc')
+        ),
+        (snapshot) => setComments(snapshot.docs)
+      ),
+    [db, id]
+  )
+
+  useEffect(
+    () =>
+      onSnapshot(collection(db, 'posts', id, 'likes'), (snapshot) =>
+        setLikes(snapshot.docs)
+      ),
+    [db, id]
+  )
+
+  useEffect(
+    () =>
       setLiked(
         likes.findIndex((like) => like.id === session?.user?.uid) !== -1
       ),
