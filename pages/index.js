@@ -10,7 +10,7 @@ import { useRecoilState } from 'recoil'
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession()
-  const [isOpen, setIsOpen] = useRecoilState(modalState)
+  const [isOpen, setIsOpen] = useRecoilState(modalState) // Modal Function
 
   if (!session) return <Login providers={providers} />
 
@@ -25,7 +25,6 @@ export default function Home({ trendingResults, followResults, providers }) {
       <main className='bg-[#121212] min-h-screen min-w-screen flex max-w-[1500px] mx-auto'>
         <Sidebar />
         <Feed />
-
         <Widgets
           trendingResults={trendingResults}
           followResults={followResults}
@@ -33,7 +32,7 @@ export default function Home({ trendingResults, followResults, providers }) {
 
         {isOpen && <Modal />}
       </main>
-    </div>
+    </div> // only display modal when isOpen state is True
   )
 }
 
